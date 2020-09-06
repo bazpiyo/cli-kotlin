@@ -1,0 +1,25 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.0'
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
+}
+
+apply plugin: 'application'
+
+group 'com.gihut.bazpiyo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+}
+
+mainClassName = "com.gihut.bazpiyo.clikotlin.MainKt"
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
